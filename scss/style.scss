@@ -1,16 +1,16 @@
 @import "normalize.scss";
 
 // === Mixins ===
-@mixin font-lato {
+@mixin font-main {
   font-family: 'Lato', sans-serif;
 }
 
-@mixin font-montserrat {
+@mixin font-secondary {
   font-family: 'Montserrat', sans-serif;
 }
 
 @mixin start-button {
-  @include font-montserrat;
+  @include font-secondary;
   display: inline-block;
   font-size: 18px;
   margin: 0;
@@ -24,6 +24,7 @@
 
 // === Variables ===
 $color-white: #ffffff;
+$color-main: #414141;
 // === /Variables ===
 
 // === Common ===
@@ -31,8 +32,8 @@ $color-white: #ffffff;
   box-sizing: border-box;
 }
 body {
-  @include font-lato;
-  color: #414141;
+  @include font-main;
+  color: $color-main;
 }
 
 .section-outer {
@@ -68,20 +69,34 @@ body {
   background: linear-gradient(to right, #fe985b, #fe4fa7);
   border: none;
   color: $color-white;
+
+  &:hover {
+    background: linear-gradient(to right, #fe4fa7, #fe985b);
+  }
 }
 
 .btn-secondary {
   @include start-button;
   background: $color-white;
-  color: #414141;
-  border: 1px solid #414141;
+  color: $color-main;
+  border: 1px solid $color-main;
+  transition: .2s;
+
+  &:hover {
+    color: #fe4fa7;
+    border-color: #fe4fa7
+  }
 }
 
 .btn-free {
   @include start-button;
   background: $color-white;
-  color: #414141;
+  color: $color-main;
   border: none;
+
+  &:hover {
+    color: #fe4fa7;
+  }
 }
 
 // === /Common ===
@@ -134,7 +149,7 @@ body {
       margin-bottom: 16px;
     }
     &__subtitle {
-      @include font-montserrat;
+      @include font-secondary;
       font-size: 18px;
       line-height: 32px;
       width: 65%;
@@ -147,7 +162,7 @@ body {
         flex: 1;
         padding-right: 40px;
         input {
-          @include font-montserrat;
+          @include font-secondary;
           border: none;
           border-radius: 4px;
           background-color: rgba(255,255,255,.25);
@@ -157,9 +172,14 @@ body {
           padding: 16px 20px;
           outline: none;
           width: 100%;
+          transition: .2s;
 
           &::placeholder {
             color: $color-white;
+          }
+
+          &:focus {
+            background-color: rgba(255,255,255,.5);
           }
         }
       }
@@ -223,7 +243,7 @@ body {
     align-self: center;
     padding-left: 50px;
     &-text {
-      @include font-montserrat;
+      @include font-secondary;
       font-size: 24px;
       line-height: 40px;
     }
@@ -311,7 +331,7 @@ body {
     margin-bottom: 26px;
   }
   &__description {
-    @include font-montserrat;
+    @include font-secondary;
     font-size: 20px;
     line-height: 30px;
     margin: 0 auto 40px;
@@ -324,6 +344,73 @@ body {
 // === /Free ===
 // === Footer ===
 .section-footer {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  &__logo {
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 30px;
+  }
+  &__nav {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0 0 75px;
+    padding: 0;
 
+    li {
+      & + li {
+        margin-left: 60px;
+      }
+      a {
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 20px;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #464646;
+        transition: .2s;
+        
+        &.active, &:hover {
+          color: #fe50a6;
+        }
+      }
+    }
+  }
+  &__copyright_and_links {
+    @include font-secondary;
+
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    line-height: 18px;
+    width: 60%;
+    margin: 0 auto;
+
+    &-links {
+      .helper-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+
+        li {
+          & + li {
+            margin-left: 20px;
+          }
+          a {
+            color: #464646;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 // === /Footer ===
