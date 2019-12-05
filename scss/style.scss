@@ -1,0 +1,153 @@
+@import "normalize.scss";
+
+// === Mixins ===
+@mixin font-lato {
+  font-family: 'Lato', sans-serif;
+}
+
+@mixin font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+// === /Mixins ===
+
+// === Variables ===
+$color-white: #ffffff;
+// === /Variables ===
+
+// === Common ===
+* {
+  box-sizing: border-box;
+}
+body {
+  @include font-lato;
+}
+
+.section-outer {
+
+}
+
+.section-inner {
+  width: 1180px;
+  margin: 0 auto;
+}
+// === /Common ===
+
+// === Header ===
+.section-header {
+  color: $color-white;
+  background: url('../img/bg-header.png') no-repeat 50% 50%;
+  background-size: cover;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(20, 39, 41, .6);
+    z-index: 5;
+  }
+  .section-inner {
+    position: relative;
+    height: 100vh;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+  }
+  &-logo {
+    font-weight: bold;
+    font-size: 24px;
+    flex-shrink: 1;
+    padding-top: 35px;
+  }
+  &-content {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
+  &-wrapper {
+    margin: 0 auto;
+    &__title,
+    &__subtitle {
+      text-align: center;
+    }
+    &__title {
+      font-weight: bold;
+      font-size: 56px;
+      line-height: 60px;
+      margin-bottom: 16px;
+    }
+    &__subtitle {
+      @include font-montserrat;
+      font-size: 18px;
+      line-height: 32px;
+      width: 65%;
+      margin: 0 auto 44px;
+    }
+    &__form {
+      display: flex;
+
+      &-input {
+        flex: 1;
+        padding-right: 40px;
+        input {
+          @include font-montserrat;
+          border: none;
+          border-radius: 4px;
+          background-color: rgba(255,255,255,.25);
+          color: $color-white;
+          font-size: 16px;
+          margin: 0;
+          padding: 16px 20px;
+          outline: none;
+          width: 100%;
+
+          &::placeholder {
+            color: $color-white;
+          }
+        }
+      }
+      &-button {
+        button {
+          @include font-montserrat;
+          color: $color-white;
+          font-size: 18px;
+          margin: 0;
+          padding: 16px 20px;
+          border: none;
+          border-radius: 4px;
+          background: linear-gradient(to right, #fe985b, #fe4fa7);
+          outline: none;
+        }
+      }
+    }
+  }
+}
+// === /Header ===
+// === Promo ===
+.section-promo {
+
+}
+// === /Promo ===
+// === Founder ===
+.section-founder {
+
+}
+// === /Founder ===
+// === Plans ===
+.section-plans {
+
+}
+// === /Plans ===
+// === Free ===
+.section-free {
+
+}
+// === /Free ===
+// === Footer ===
+.section-footer {
+
+}
+// === /Footer ===
