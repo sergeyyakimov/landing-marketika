@@ -332,6 +332,7 @@ body {
 
 .btn-main {
   font-family: 'Montserrat', sans-serif;
+  display: inline-block;
   font-size: 18px;
   margin: 0;
   padding: 16px 20px;
@@ -345,6 +346,7 @@ body {
 
 .btn-secondary {
   font-family: 'Montserrat', sans-serif;
+  display: inline-block;
   font-size: 18px;
   margin: 0;
   padding: 16px 20px;
@@ -355,6 +357,20 @@ body {
   background: #ffffff;
   color: #414141;
   border: 1px solid #414141; }
+
+.btn-free {
+  font-family: 'Montserrat', sans-serif;
+  display: inline-block;
+  font-size: 18px;
+  margin: 0;
+  padding: 16px 20px;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  background: #ffffff;
+  color: #414141;
+  border: none; }
 
 .section-header {
   color: #ffffff;
@@ -513,3 +529,21 @@ body {
         line-height: 28px;
         font-weight: 300;
         margin-bottom: 50px; }
+
+.section-free {
+  text-align: center;
+  color: #ffffff;
+  background: linear-gradient(to right, #fe985b, #fe4fa7);
+  padding-top: 120px;
+  padding-bottom: 120px; }
+  .section-free__title {
+    font-size: 55px;
+    line-height: 60px;
+    font-weight: bold;
+    margin-bottom: 26px; }
+  .section-free__description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    margin: 0 auto 40px;
+    width: 50%; }
