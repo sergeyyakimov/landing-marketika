@@ -20,6 +20,7 @@ $color-white: #ffffff;
 }
 body {
   @include font-lato;
+  color: #414141;
 }
 
 .section-outer {
@@ -29,6 +30,25 @@ body {
 .section-inner {
   width: 1180px;
   margin: 0 auto;
+}
+
+.description-item {
+  &__icon {
+    margin-bottom: 20px;
+  }
+  &__title {
+    margin-bottom: 14px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+  }
+  &__text {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 27px;
+    color: #6c6c6c;
+    margin-top: 14px;
+  }
 }
 // === /Common ===
 
@@ -128,7 +148,44 @@ body {
 // === /Header ===
 // === Promo ===
 .section-promo {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  &-1 {
+    display: flex;
+    &__content,
+    &__video {
+      flex-basis: 50%;
+    }
+    &__content {
+      padding-right: 90px;
+      .title {
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 51px;
+        margin-bottom: 52px;
+      }
+      .description-item {
+        margin-top: 28px;
+      }
+    }
+    &__video {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  &-2 {
+    display: flex;
+    margin-top: 120px;
+    padding-top: 86px;
+    border-top: 1px solid #e2e2e2;
+    text-align: center;
 
+    .description-item + .description-item {
+      margin-left: 40px;
+    }
+  }
 }
 // === /Promo ===
 // === Founder ===
